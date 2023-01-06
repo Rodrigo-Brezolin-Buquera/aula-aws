@@ -21,7 +21,7 @@ export const createProduct = async (req: Request, res: Response) => {
 
         res.status(200).send({message:"produto criado com sucesso"})
 
-    } catch (error) {
+    } catch (error:any) {
         res.status(404).send(error.message || error.sqlMessage)
     }
 }
