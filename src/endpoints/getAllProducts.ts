@@ -13,7 +13,7 @@ export const getAllProducts = async (req: Request, res: Response) => {
         const result = productsList.map((input: any) => new Product(input.id, input.name, input.description, input.price))
 
         res.status(200).send(result)
-    } catch (error) {
+    } catch (error:any) {
         res.status(404).send(error.message || error.sqlMessage)
     }
 }

@@ -24,7 +24,7 @@ export const getPurchasesByUserId = async (req: Request, res: Response) => {
         const result = list.map((i: any) => new Purchase(i.id, i.user_id, i.product_id, i.quantity, i.total_value))
         
         res.status(200).send(result)
-    } catch (error) {
+    } catch (error:any) {
         res.status(404).send(error.message || error.sqlMessage)
     }
 }

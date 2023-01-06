@@ -11,7 +11,7 @@ export const getAllTickets = async (req: Request, res: Response) => {
         const result = list.map((i: any) => new Ticket(i.id, i.name, i.description, i.price, i.origin, i.destiny ))
 
         res.status(200).send(result)
-    } catch (error) {
+    } catch (error:any) {
         res.status(404).send(error.message || error.sqlMessage)
     }
 }
